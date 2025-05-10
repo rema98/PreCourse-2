@@ -10,22 +10,17 @@ def mergeSort(arr):
   
   #write your code here
   if len(arr) > 1:
-      # Finding the middle of the array
       mid = len(arr) // 2
 
-      # Dividing the array elements into two halves
+
       L = arr[:mid]
       R = arr[mid:]
 
-      # Sorting the first half
       mergeSort(L)
-
-      # Sorting the second half
       mergeSort(R)
 
       i = j = k = 0
 
-      # Merging the sorted halves
       while i < len(L) and j < len(R):
           if L[i] < R[j]:
               arr[k] = L[i]
@@ -35,7 +30,6 @@ def mergeSort(arr):
               j += 1
           k += 1
 
-      # Checking for any remaining elements
       while i < len(L):
           arr[k] = L[i]
           i += 1
